@@ -1,0 +1,127 @@
+/* ============================================================
+   CampusFind – Global Styles
+   ============================================================ */
+
+@import "tailwindcss";
+
+@theme {
+  /* Override Indigo with Logo's Bright Blue (#0066ff) */
+  --color-indigo-50: #eef6ff;
+  --color-indigo-100: #d9ebff;
+  --color-indigo-200: #bcdaff;
+  --color-indigo-300: #8ec3ff;
+  --color-indigo-400: #59a2ff;
+  --color-indigo-500: #2f7eff;
+  --color-indigo-600: #0066ff; /* Primary Bright Blue */
+  --color-indigo-700: #0049bf;
+  --color-indigo-800: #003e9f;
+  --color-indigo-900: #003681;
+  --color-indigo-950: #002359;
+
+  /* Override Violet with Logo's Dark Navy (#0c2c5c) */
+  --color-violet-50: #f4f6f9;
+  --color-violet-100: #e4eaf2;
+  --color-violet-200: #cad5e6;
+  --color-violet-300: #a3b8d4;
+  --color-violet-400: #7695bc;
+  --color-violet-500: #5478a2;
+  --color-violet-600: #3f5d83;
+  --color-violet-700: #334b6b;
+  --color-violet-800: #2d405a;
+  --color-violet-900: #0c2c5c; /* Primary Dark Navy */
+  --color-violet-950: #071936;
+
+  /* Override Emerald with Logo's Green (#00a859) */
+  --color-emerald-50: #effaf4;
+  --color-emerald-100: #d7f3e2;
+  --color-emerald-200: #b2e6c9;
+  --color-emerald-300: #7fd2a9;
+  --color-emerald-400: #4cb889;
+  --color-emerald-500: #00a859; /* Logo Green */
+  --color-emerald-600: #1d7f55;
+  --color-emerald-700: #196545;
+  --color-emerald-800: #165038;
+  --color-emerald-900: #134230;
+  --color-emerald-950: #0a251b;
+}
+
+/* Custom CSS Variables */
+:root {
+  --brand-primary: #0066ff;
+  --brand-secondary: #0c2c5c;
+  --brand-accent: #00a859;
+}
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out both;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 22rem;
+}

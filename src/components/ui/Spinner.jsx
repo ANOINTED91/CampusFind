@@ -1,0 +1,23 @@
+/**
+ * Spinner component
+ * @param {{ fullScreen?: boolean, size?: 'sm'|'md'|'lg', className?: string }} props
+ */
+export default function Spinner({ fullScreen = false, size = 'md', className = '' }) {
+  const sizes = { sm: 'w-4 h-4', md: 'w-8 h-8', lg: 'w-12 h-12' }
+  const spinner = (
+    <div
+      className={`${sizes[size]} border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin ${className}`}
+      role="status"
+      aria-label="Loading"
+    />
+  )
+
+  if (fullScreen) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        {spinner}
+      </div>
+    )
+  }
+  return spinner
+}
